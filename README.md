@@ -21,15 +21,15 @@ Compatible with:
 
 If use with Cordova CLI:
 ```
-cordova plugin add com.rjfun.cordova.mobfox
+cordova plugin add com.rjfun.cordova.mopub
 ```
 
 If use with Intel XDK:
 Project -> CORDOVA 3.X HYBRID MOBILE APP SETTINGS -> PLUGINS AND PERMISSIONS -> Third-Party Plugins ->
 Add a Third-Party Plugin -> Get Plugin from the Web, input:
 ```
-Name: MobFoxPluginPro
-Plugin ID: com.rjfun.cordova.mobfox
+Name: MoPubPluginPro
+Plugin ID: com.rjfun.cordova.mopub
 [x] Plugin is located in the Apache Cordova Plugins Registry
 ```
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="com.rjfun.cordova.mopub"
+	version="1.0.0">
+      
+    <name>MoPub</name>
+	<description>Cordova/PhoneGap Plugin for MoPub Ads</description>
+	<author>Liming Xie</author>
+	<license>MIT</license>
+	<keywords>ad,admob,google,play,services,iad,mopub</keywords>
+    <repo>https://github.com/floatinghotpot/cordova-plugin-mopub.git</repo>
+    <issue>https://github.com/floatinghotpot/cordova-plugin-mopub/issues</issue>
+
+	<engines>
+	    <engine name="cordova" version=">=3.5" />
+	</engines>
+
+    <js-module src="www/MoPub.js" name="MoPub">
+        <clobbers target="window.MoPub" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+    	<dependency id="com.google.playservices" version=">=19.0.0"/>
+    	<dependency id="android.support.v4" version=">=1.0.0"/>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MoPub">
+                <param name="android-package" value="com.rjfun.cordova.mopub.MoPub"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+			  <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation"/>
+			  <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation"/>
+			  <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation"/>
+			  <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation"/>
+          </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+			  <uses-permission android:name="android.permission.INTERNET" />
+			  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+			  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+          
+        <source-file src="src/android/mopub-sdk.jar" target-dir="libs" />
+        <source-file src="src/android/cordova-admob.jar" target-dir="libs" />
+		
+     </platform>
+     
+     <!-- ios -->
+     <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="MoPub">
+                 <param name="ios-package" value="CDVMoPub" />
+             </feature>
+         </config-file>
+         <header-file src="src/ios/CDVMoPub.h" />
+         <source-file src="src/ios/CDVMoPub.m" />
+         <header-file src="src/ios/MoPubAds.h" />
+         <source-file src="src/ios/libMoPubAds.a" framework="true"/>
+         <source-file src="src/ios/libMoPubSDK.a" framework="true" />
+		
+        <framework src="AdSupport.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreLocation.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="EventKit.framework"/>
+        <framework src="EventKitUI.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="UIKit.framework"/>
+	</platform>
+
+</plugin>

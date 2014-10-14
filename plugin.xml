@@ -9,7 +9,7 @@
 	<description>Cordova/PhoneGap Plugin for MoPub Ads</description>
 	<author>Liming Xie</author>
 	<license>MIT</license>
-	<keywords>ad,admob,google,play,services,iad,mopub</keywords>
+	<keywords>ad,admob,iad,mopub,mobfox,flurry</keywords>
     <repo>https://github.com/floatinghotpot/cordova-plugin-mopub.git</repo>
     <issue>https://github.com/floatinghotpot/cordova-plugin-mopub/issues</issue>
 
@@ -44,7 +44,7 @@
         </config-file>
           
         <source-file src="src/android/mopub-sdk.jar" target-dir="libs" />
-        <source-file src="src/android/cordova-admob.jar" target-dir="libs" />
+        <source-file src="src/android/cordova-mopub.jar" target-dir="libs" />
 		
      </platform>
      
@@ -69,6 +69,7 @@
         <framework src="EventKitUI.framework"/>
         <framework src="Foundation.framework"/>
         <framework src="MediaPlayer.framework"/>
+        <framework src="MessageUI.framework"/>
         <framework src="QuartzCore.framework"/>
         <framework src="StoreKit.framework"/>
         <framework src="SystemConfiguration.framework"/>

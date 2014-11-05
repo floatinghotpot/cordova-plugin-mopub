@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mopub"
-	version="1.0.0">
+	version="1.1.0">
       
     <name>MoPub</name>
 	<description>Cordova/PhoneGap Plugin for MoPub Ads</description>
@@ -21,29 +21,15 @@
         <clobbers target="window.MoPub" />
     </js-module>
 
+	<dependency id="com.mopub.sdk" version=">=3.1.0"/>
+
     <!-- android -->
     <platform name="android">
-    	<dependency id="com.google.playservices" version=">=19.0.0"/>
-    	<dependency id="android.support.v4" version=">=1.0.0"/>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="MoPub">
                 <param name="android-package" value="com.rjfun.cordova.mopub.MoPub"/>
             </feature>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-			  <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation"/>
-			  <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation"/>
-			  <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation"/>
-			  <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation"/>
-          </config-file>
-        <config-file target="AndroidManifest.xml" parent="/*">
-			  <uses-permission android:name="android.permission.INTERNET" />
-			  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-			  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-			  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        </config-file>
-          
-        <source-file src="src/android/mopub-sdk.jar" target-dir="libs" />
         <source-file src="src/android/cordova-mopub.jar" target-dir="libs" />
 		
      </platform>
@@ -59,21 +45,6 @@
          <source-file src="src/ios/CDVMoPub.m" />
          <header-file src="src/ios/MoPubAds.h" />
          <source-file src="src/ios/libMoPubAds.a" framework="true"/>
-         <source-file src="src/ios/libMoPubSDK.a" framework="true" />
-		
-        <framework src="AdSupport.framework"/>
-        <framework src="CoreGraphics.framework"/>
-        <framework src="CoreLocation.framework"/>
-        <framework src="CoreTelephony.framework"/>
-        <framework src="EventKit.framework"/>
-        <framework src="EventKitUI.framework"/>
-        <framework src="Foundation.framework"/>
-        <framework src="MediaPlayer.framework"/>
-        <framework src="MessageUI.framework"/>
-        <framework src="QuartzCore.framework"/>
-        <framework src="StoreKit.framework"/>
-        <framework src="SystemConfiguration.framework"/>
-        <framework src="UIKit.framework"/>
 	</platform>
 
 </plugin>

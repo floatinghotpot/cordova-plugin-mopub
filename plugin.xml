@@ -3,13 +3,13 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mopub"
-	version="1.1.1">
+	version="2.0.0">
       
     <name>MoPub</name>
 	<description>Cordova/PhoneGap Plugin for MoPub Ads</description>
 	<author>Liming Xie</author>
 	<license>MIT</license>
-	<keywords>ad,admob,iad,mopub,mobfox,flurry</keywords>
+	<keywords>ad,mopub,rjfun</keywords>
     <repo>https://github.com/floatinghotpot/cordova-plugin-mopub.git</repo>
     <issue>https://github.com/floatinghotpot/cordova-plugin-mopub/issues</issue>
 
@@ -21,13 +21,14 @@
         <clobbers target="window.MoPub" />
     </js-module>
 
+	<dependency id="com.rjfun.cordova.ad" version=">=1.0.0"/>
 	<dependency id="com.mopub.sdk" version=">=3.1.0"/>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="MoPub">
-                <param name="android-package" value="com.rjfun.cordova.mopub.MoPub"/>
+                <param name="android-package" value="com.rjfun.cordova.mopub.MoPubPlugin"/>
             </feature>
         </config-file>
         <source-file src="src/android/cordova-mopub.jar" target-dir="libs" />
@@ -38,13 +39,10 @@
      <platform name="ios">
          <config-file target="config.xml" parent="/*">
              <feature name="MoPub">
-                 <param name="ios-package" value="CDVMoPub" />
+                 <param name="ios-package" value="MoPubPlugin" />
              </feature>
          </config-file>
-         <header-file src="src/ios/CDVMoPub.h" />
-         <source-file src="src/ios/CDVMoPub.m" />
-         <header-file src="src/ios/MoPubAds.h" />
-         <source-file src="src/ios/libMoPubAds.a" framework="true"/>
+         <source-file src="src/ios/libCordovaMoPub.a" framework="true" compiler-flags="-force_load"/>
 	</platform>
 
 </plugin>

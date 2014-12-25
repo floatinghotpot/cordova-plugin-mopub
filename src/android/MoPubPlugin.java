@@ -148,7 +148,7 @@ public class MoPubPlugin extends GenericAdPlugin {
 
 			@Override
 			public void onInterstitialDismissed(MoPubInterstitial arg0) {
-				fireAdEvent(EVENT_AD_LEAVEAPP, ADTYPE_INTERSTITIAL);
+				fireAdEvent(EVENT_AD_DISMISS, ADTYPE_INTERSTITIAL);
 			}
 
 			@Override

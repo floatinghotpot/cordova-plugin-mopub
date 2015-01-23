@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="com.rjfun.cordova.mopub"
-	version="2.1.1">
+	version="2.1.2">
       
     <name>MoPub</name>
 	<description>Cordova/PhoneGap Plugin for MoPub Ads</description>
@@ -61,7 +61,11 @@
          <header-file src="src/ios/MoPubPlugin.h"/>
          <source-file src="src/ios/MoPubPlugin.m"/>
          
-		<framework src="src/ios/MoPub.framework" custom="true"/>
+         <framework src="src/ios/MoPub.framework" custom="true"/>
+         
+         <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX.png"/>
+         <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
+         <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
 		
         <framework src="AdSupport.framework"/>
         <framework src="CoreGraphics.framework"/>

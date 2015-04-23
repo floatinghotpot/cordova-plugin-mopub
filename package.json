@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-mopub",
+  "version": "2.1.2",
+  "description": "Cordova Plugin for MoPub Ads to monetize hybrid apps.",
+  "cordova": {
+    "id": "cordova-plugin-mopub",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floatinghotpot/cordova-plugin-mopub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-plugin-mopub/issues"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "ad",
+    "mopub",
+    "rjfun"
+  ],
+  "author": {
+    "name": "Raymond Xie",
+    "email": "rjfun.mobile@gmail.com"
+  },
+  "license": "MIT"
+}

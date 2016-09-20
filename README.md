@@ -17,20 +17,13 @@ Compatible with:
 * Intel XDK and Crosswalk, r1095+
 * IBM Worklight, v6.2+
 
+* MoPub Android SDK 4.9.0+
+
 ## How to use? ##
 
 If use with Cordova CLI:
 ```
-cordova plugin add com.rjfun.cordova.mopub
-```
-
-If use with Intel XDK:
-Project -> CORDOVA 3.X HYBRID MOBILE APP SETTINGS -> PLUGINS AND PERMISSIONS -> Third-Party Plugins ->
-Add a Third-Party Plugin -> Get Plugin from the Web, input:
-```
-Name: MoPubPluginPro
-Plugin ID: com.rjfun.cordova.mopub
-[x] Plugin is located in the Apache Cordova Plugins Registry
+cordova plugin add cordova-plugin-mopub
 ```
 
 ## Quick Start Example Code ##

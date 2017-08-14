@@ -8,7 +8,8 @@
 
 #import "MoPubPlugin.h"
 
-#import <MoPub/MoPub.h>
+#import "MPAdView.h"
+#import "MPInterstitialAdController.h"
 
 #define DEFAULT_BANNER_ID       @"420866d662fa4036b04a8cd5b12f525b"
 #define DEFAULT_INTERSTITIAL_ID @"b4c9cf91042d409ba8b275409c993c15"

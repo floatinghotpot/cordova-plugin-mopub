@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
   id="cordova-plugin-mopub"
-  version="2.4.0">
+  version="2.4.1">
       
   <name>MoPub</name>
   <description>Cordova/PhoneGap Plugin for MoPub Ads</description>
@@ -37,17 +37,18 @@
         <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-      </config-file>
+        <activity android:name="com.mopub.mobileads.RewardedMraidActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    </config-file>
 
       <config-file target="AndroidManifest.xml" parent="/*">
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
       </config-file>
-
-      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
       <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
       <framework src="com.mopub:mopub-sdk:+" />
@@ -73,6 +74,7 @@
     <framework src="AdSupport.framework"/>
     <framework src="CoreGraphics.framework"/>
     <framework src="CoreLocation.framework"/>
+    <framework src="CoreMedia.framework"/>
     <framework src="CoreTelephony.framework"/>
     <framework src="EventKit.framework"/>
     <framework src="EventKitUI.framework"/>
@@ -83,6 +85,7 @@
     <framework src="StoreKit.framework"/>
     <framework src="SystemConfiguration.framework"/>
     <framework src="UIKit.framework"/>
+    <framework src="WebKit.framework"/>
 
     <!-- required cordova 6.4.0 or higher -->
     <framework src="mopub-ios-sdk" type="podspec" spec="~> 4.12.0"/>

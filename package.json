@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-mopub",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Cordova Plugin for MoPub Ads to monetize hybrid apps.",
   "cordova": {
     "id": "cordova-plugin-mopub",
